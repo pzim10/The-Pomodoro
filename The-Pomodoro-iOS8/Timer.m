@@ -80,6 +80,7 @@
 //checks isOn if yes it calls decreaseSecond and performs checkActive after a second delay
 - (void)checkActive
 {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     if (self.isOn)
     {
         [self decreaseSecond];
