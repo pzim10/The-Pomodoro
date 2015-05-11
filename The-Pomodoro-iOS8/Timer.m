@@ -86,6 +86,7 @@
 
 - (void)checkActive
 {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     if (self.isOn)
     {
         [self decreaseSecond];
