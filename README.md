@@ -35,7 +35,7 @@ The classes within our app are going to talk to each other with NSNotifications.
 | Notification Name               | When Posted                               | Who Posts        | Who Observes                              |
 |---------------------------------|-------------------------------------------|------------------|-------------------------------------------|
 | ```SecondTickNotification```    | every second tick while timer is active   | Timer            | TimerViewController                       |
-| ```RoundCompleteNotification``` | on completion of round (aka timer expiry) | Timer            | TimerViewController, RoundsViewController |
+| ```TimerCompleteNotification``` | on completion of round (aka timer expiry) | Timer            | TimerViewController, RoundsViewController |
 | ```NewRoundNotification```      | when a new round is "selected"            | RoundsController | TimerViewController                       |
 
 ###Step 2: Add the interface to the TimerViewController
@@ -60,13 +60,13 @@ Pay attention to what the class does for you, walk through each method, understa
 
 - Create a ```POTimer``` Class as a Shared Instance
 - Add public properties of type NSInteger for ```minutes``` and ```seconds```
-- Create public static NSStrings with names from above table (```SecondTickNotification```, ```RoundCompleteNotification```, ```NewRoundNotification```)
+- Create public static NSStrings with names from above table (```SecondTickNotification```, ```TimerCompleteNotification```, ```NewRoundNotification```)
 - Add a private BOOL property called ```isOn``` to allow you to check if the timer is active
 - Add a public void method called ```startTimer```
   - ```startTimer``` should turn ```isOn``` to YES
   - ```startTimer``` should call ```checkActive``` (which you will write below)
 - Add a private void method called ```endTimer```
-  - ```endTimer``` should turn ```isOn``` to NO and send a ```RoundCompleteNotification``` that the timer has finished
+  - ```endTimer``` should turn ```isOn``` to NO and send a ```TimerCompleteNotification``` that the timer has finished
 - Add a private void method called ```decreaseSecond```
   - ```decreaseSecond``` should decrease one second from the remaining time and send a ```SecondTickNotification``` notification that one second passed
   	- don't forget to change minutes, if necessary
@@ -110,7 +110,7 @@ Pay attention to what the class does for you, walk through each method, understa
 
 ###Step 7: Add observer notifications
 
-- Add ```RoundsViewController``` as observer of ```RoundCompleteNotification```
+- Add ```RoundsViewController``` as observer of ```TimerCompleteNotification```
   - ```-(void)roundComplete```
     - if the current round is not the last round 
       - increment the ```currentRounds``` property
@@ -124,7 +124,7 @@ Pay attention to what the class does for you, walk through each method, understa
   - ```-(void)newRound```
     - update ```timerLabel```
     - enable ```timerButton```
-- Add ```TimerViewController``` as observer of ```RoundCompleteNotification```
+- Add ```TimerViewController``` as observer of ```TimerCompleteNotification```
   - ```-(void)newRound```
 - Don't forget to register in the init and unregister in the dealloc
 
