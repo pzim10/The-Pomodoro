@@ -34,7 +34,7 @@
 - (void)endTimer
 {
     self.isOn = NO;
-    [[NSNotificationCenter defaultCenter] postNotificationName:RoundCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:TimerCompleteNotification object:nil];
 }
 
 - (void)decreaseSecond
