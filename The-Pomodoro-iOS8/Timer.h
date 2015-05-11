@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString *SecondTickNotification = @"secondTickNotification";
-static NSString *TimerCompleteNotification = @"roundCompleteNotification";
+static NSString *TimerCompleteNotification = @"timerCompleteNotification";
 static NSString *NewRoundNotification = @"newRoundNotification";
 
 @interface Timer : NSObject
