@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString *SecondTickNotification = @"secondTickNotification";
-static NSString *RoundCompleteNotification = @"roundCompleteNotification";
+static NSString *TimerCompleteNotification = @"TimerCompleteNotification";
 static NSString *NewRoundNotification = @"newRoundNotification";
 static NSString *expirationDate = @"expiryDate";
 
