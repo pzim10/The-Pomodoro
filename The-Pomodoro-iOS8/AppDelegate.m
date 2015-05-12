@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RoundsViewController.h"
 #import "TimerViewController.h"
+#import "AppearanceController.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    [AppearanceController initializeAppearanceDefaults];
+
     
     //Create a Timer View Controller
     //Add tabBarItem.title and tabBarItem.image

@@ -42,6 +42,8 @@
     return @[@25, @5, @25, @5, @25, @5, @25, @15];
 }
 
+
+//Create an array of images for the image view
 + (NSArray *)imageNames
 {
     return @[@"work.png", @"play.png", @"work.png", @"play.png", @"work.png", @"play.png", @"work.png", @"nap.png"];

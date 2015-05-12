@@ -72,7 +72,7 @@ static NSString *reuseID = @"reuseID";
 }
 
 #pragma mark - TableView DataSource Methods
-
+//Use the imageNames array to get the correct image for the cell
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
