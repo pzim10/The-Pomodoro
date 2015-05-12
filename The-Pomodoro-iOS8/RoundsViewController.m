@@ -38,6 +38,9 @@ static NSString *reuseID = @"reuseID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = @"Rounds";
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -78,6 +81,7 @@ static NSString *reuseID = @"reuseID";
     NSNumber *minutes = roundsArray[indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%li minutes", (long)[minutes integerValue]];
+    cell.imageView.image = [UIImage imageNamed:[RoundsController imageNames][indexPath.row]];
     
     return cell;
 }
