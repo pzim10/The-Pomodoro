@@ -16,6 +16,8 @@
 
 @implementation Timer
 
+
+//Create timer shared instance
 + (Timer *)sharedInstance {
     static Timer *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -31,12 +33,16 @@
     return sharedInstance;
 }
 
+//set isON to No or False and call roundCompleteNotification
 - (void)endTimer
 {
     self.isOn = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:TimerCompleteNotification object:nil];
 }
 
+//If seconds in larger than 0 subtract one & call secondTickNotification
+//If seconds is equal to 0 and minutes is larger than 0 subtract 1 from minutes
+//Otherwise end the timer
 - (void)decreaseSecond
 {
     if (self.seconds > 0)
@@ -56,18 +62,22 @@
     }
 }
 
+//Set inOn to NO or False
+//Cancel all requests for the target
 - (void)cancelTimer
 {
     self.isOn = NO;
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
+//set isON to YES and call checkActive
 - (void)startTimer
 {
     self.isOn = YES;
     [self checkActive];
 }
 
+//checks isOn if yes it calls decreaseSecond and performs checkActive after a second delay
 - (void)checkActive
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
