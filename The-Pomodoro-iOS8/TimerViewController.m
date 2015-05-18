@@ -67,38 +67,8 @@
 //Set the minutes and the seconds to the Timer seconds and minutes property
 - (void)updateTimerLabel
 {
-    NSInteger minutes = [Timer sharedInstance].minutes;
-    NSInteger seconds = [Timer sharedInstance].seconds;
-    
-    //set the TimerLabel using the timerStringWithMinutes method
-    self.timerLabel.text = [self timerStringWithMinutes:minutes andSeconds:seconds];
-}
-
-//If the minutes or seconds is greater than 10 set timerString as is
-//If minutes or strings is less than 10 add a 0 in front of the number
-- (NSString *)timerStringWithMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds
-{
-    NSString *timerString;
-    
-    if (minutes >= 10)
-    {
-        timerString = [NSString stringWithFormat:@"%li:", (long)minutes];
-    }
-    else
-    {
-        timerString = [NSString stringWithFormat:@"0%li:", (long)minutes];
-    }
-    
-    if (seconds >= 10)
-    {
-        timerString = [timerString stringByAppendingString:[NSString stringWithFormat:@"%li", (long)seconds]];
-    }
-    else
-    {
-        timerString = [timerString stringByAppendingString:[NSString stringWithFormat:@"0%li", (long)seconds]];
-    }
-    
-    return timerString;
+    //set the TimerLabel using the stringOfTimeRemaining method
+    self.timerLabel.text = [[Timer sharedInstance] stringOfTimeRemaining];
 }
 
 //Register for the notfications

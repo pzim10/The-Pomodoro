@@ -21,5 +21,6 @@ static NSString *NewRoundNotification = @"newRoundNotification";
 
 - (void)startTimer;
 - (void)cancelTimer;
+- (NSString *)stringOfTimeRemaining;
 
 @end
