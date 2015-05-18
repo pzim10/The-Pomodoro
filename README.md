@@ -77,10 +77,11 @@ Pay attention to what the class does for you, walk through each method, understa
 - Add a public void method called ```cancelTimer```
   - ```cancelTimer``` should turn ```isOn``` to NO
   - ```cancelTimer``` should cancel previous perform requests
+- Add an instance helper method that will return an NSString of the time remaining. This should return a string like one you'd read on a timer, 05:09. 
 
 ###Step 5: Update TimerViewController User Interface and Implementation File
 
-- Add a method to your ```TimerViewController``` to update the ````timerLabel``` from the ```sharedInstance``` of ```Timer```.
+- Add a method to your ```TimerViewController``` to update the ````timerLabel``` from the ```sharedInstance``` of ```Timer``` using the helper method above.
 - Subscribe your ```TimerViewController``` to run the update label method on the ```SecondTickNotification```.
   - ```registerForNotifications``` should be placed in a custom init method.
 - Unsubscribe your ```TimerViewController``` from notifications when instances are deallocated.
