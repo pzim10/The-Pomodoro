@@ -33,14 +33,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.timeLeft = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/ 2 - 50,
-                                                              self.view.frame.size.height/ 2 - 25, 100, 50)];
+    self.timeLeft = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/ 2 - 100,
+                                                              self.view.frame.size.height/ 2 - 25, 200, 50)];
     self.startButton= [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2- 50,
                                                                   self.view.frame.size.height - 150, 100, 50)];
 
     [self.startButton setTitle:@"Start Timer" forState:UIControlStateNormal];
     [self.startButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [self.timeLeft setText:@"Initial Text"];
+    [self.timeLeft setTextAlignment: NSTextAlignmentCenter];
+    [self.timeLeft setText:@"Work Hard! Play Hard!"];
+    [self.timeLeft setTextColor:[UIColor grayColor]];
     [self.view addSubview:self.timeLeft];
     [self.view addSubview:self.startButton];
     [self.startButton addTarget:self action:@selector(startButtonTapped) forControlEvents:UIControlEventTouchUpInside];
