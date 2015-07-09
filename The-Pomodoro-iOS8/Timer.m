@@ -10,12 +10,6 @@
 @interface Timer ()
 
 @property (nonatomic, assign) BOOL isOn;
--(void) startTimer;
--(void) endTimer;
--(void) decreaseSecond;
--(void) checkActive;
--(void) cancelTimer;
--(NSString *)updateTime;
 
 @end
 @implementation Timer
@@ -25,7 +19,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [Timer new];
-        
     });
     return sharedInstance;
 }
