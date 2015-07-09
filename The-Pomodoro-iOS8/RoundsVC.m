@@ -14,6 +14,16 @@
 
 @implementation RoundsVC
 
++ (RoundsVC *)sharedInstance {
+    static RoundsVC *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [RoundsVC new];
+        
+        
+    });
+    return sharedInstance;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -25,6 +35,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSArray *)roundTimes{
+    return @[ @25, @5, @25, @5, @25, @5, @25, @15 ];
+}
 /*
 #pragma mark - Navigation
 

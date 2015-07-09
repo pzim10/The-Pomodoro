@@ -17,12 +17,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.timeLeft = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/ 2 - 50,
+                                                              self.view.frame.size.height/ 2 - 25, 100, 50)];
+    self.startButton= [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2- 50,
+                                                                  self.view.frame.size.height - 150, 100, 50)];
+
+    
+    self.timeLeft.text = @"25:00";
+    self.startButton.titleLabel.text = @"Start Timer";
+    self.startButton.backgroundColor = [UIColor blueColor];
+    
+    [self.view addSubview:self.timeLeft];
+    [self.view addSubview:self.startButton];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//-(id)targetForAction:(SEL)action withSender:(id)sender{
+//    
+//}
+-(void)startButtonTapped{
+    
 }
 
 /*

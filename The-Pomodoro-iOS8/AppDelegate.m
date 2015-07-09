@@ -21,13 +21,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
     TimerVC *timer = [TimerVC new];
     timer.tabBarItem.title = @"Timer";
-//    timer.tabBarItem.image = [UIImage new];
+    timer.tabBarItem.image = [UIImage imageNamed:@"Timer"];
     RoundsVC *rounds = [RoundsVC new];
     rounds.tabBarItem.title = @"Rounds";
-    rounds.tabBarItem.image = [UIImage new];
+    rounds.tabBarItem.image = [UIImage imageNamed:@"Todo List"];
     UINavigationController *navController =[[UINavigationController alloc] initWithRootViewController:rounds];
-    UITabBarController *tabController = [UITabBarController new];
     
+    UITabBarController *tabController = [UITabBarController new];
+    tabController.viewControllers = @[timer, rounds];
+    self.window.rootViewController = tabController;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
