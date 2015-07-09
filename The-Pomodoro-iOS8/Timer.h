@@ -14,7 +14,7 @@ static NSString *NewRoundNotification = @"New Round";
 
 @interface Timer : NSObject
 
-//+(Timer *) sharedInstance;
++(Timer *) sharedInstance;
 @property(nonatomic, assign) NSInteger *minutes;
 @property(nonatomic, assign) NSInteger *seconds;
 
