@@ -14,4 +14,6 @@
 @property (assign, nonatomic) NSInteger *currentRound;
 +(RoundsVC *)sharedInstance;
 
+-(void) roundSelected;
+
 @end
