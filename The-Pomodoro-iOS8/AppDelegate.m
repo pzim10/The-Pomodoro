@@ -28,7 +28,7 @@
     UINavigationController *navController =[[UINavigationController alloc] initWithRootViewController:rounds];
     
     UITabBarController *tabController = [UITabBarController new];
-    tabController.viewControllers = @[timer, rounds];
+    tabController.viewControllers = @[timer, navController];
     self.window.rootViewController = tabController;
     [self.window makeKeyAndVisible];
     
