@@ -14,6 +14,18 @@
 
 @implementation TimerVC
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self)
+    {
+        [self registerForNotifications];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -40,8 +52,11 @@
 -(void)updateLabel{
     self.timeLeft.text = [Timer sharedInstance].updateTime;
 }
--(void)observeNotification: (NSNotificationCenter *)notification{
+
+-(void)registerForNotifications{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:SecondTickNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:NewRoundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:TimerCompleteNotification object:nil];
 }
 
 //-(id)targetForAction:(SEL)action withSender:(id)sender{
