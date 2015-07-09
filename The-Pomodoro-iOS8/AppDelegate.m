@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "TimerViewController.h"
+#import "RoundsViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +21,18 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    UITabBarController *tabBarConroller = [UITabBarController new];
+    TimerViewController *timer = [TimerViewController new];
+    timer.tabBarItem.title = @"Timer";
+    timer.tabBarItem.image = [UIImage new];
+    
+    
+    RoundsViewController *rounds = [RoundsViewController new];
+    rounds.tabBarItem.title = @"Rounds";
+    rounds.tabBarItem.image = [UIImage new];
+    
+    tabBarConroller.viewControllers = @[timer, rounds];
+    self.window.rootViewController = tabBarConroller;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
