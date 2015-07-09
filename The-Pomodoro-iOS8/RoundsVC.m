@@ -7,6 +7,7 @@
 //
 
 #import "RoundsVC.h"
+#import "Timer.h"
 
 @interface RoundsVC ()
 
@@ -24,6 +25,14 @@
     });
     return sharedInstance;
 }
+
+- (void)roundSelected{
+    [Timer sharedInstance].minutes = [[self roundTimes][self.currentRound] integerValue];
+    [Timer sharedInstance].seconds = 0;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NewRoundNotification object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
