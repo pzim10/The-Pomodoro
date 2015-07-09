@@ -22,14 +22,17 @@
     });
     return sharedInstance;
 }
+
 -(void)startTimer{
     self.isOn = YES;
     [self checkActive];
 }
+
 -(void)endTimer{
     self.isOn = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:TimerCompleteNotification object:nil];
 }
+
 -(void)decreaseSecond{
     if (self.seconds > 0) {
         self.seconds--;
