@@ -50,7 +50,12 @@
 }
 
 -(void)updateLabel{
+    self.timeLeft.enabled = NO;
     self.timeLeft.text = [Timer sharedInstance].updateTime;
+}
+
+-(void)newRound{
+    self.timeLeft.enabled = YES;
 }
 
 -(void)registerForNotifications{
@@ -59,6 +64,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:TimerCompleteNotification object:nil];
 }
 
+-(void)unregisterForNotifications{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 //-(id)targetForAction:(SEL)action withSender:(id)sender{
 //    
 //}
