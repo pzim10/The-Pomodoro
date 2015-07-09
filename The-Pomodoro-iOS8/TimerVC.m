@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
-#import "TimerViewController.h"
+#import "TimerVC.h"
 
-@interface TimerViewController ()
+@interface TimerVC ()
 
 @end
 
-@implementation TimerViewController
+@implementation TimerVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

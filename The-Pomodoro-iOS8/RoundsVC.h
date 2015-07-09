@@ -1,5 +1,5 @@
 //
-//  TimerViewController.h
+//  RoundsViewController.h
 //  The-Pomodoro-iOS8
 //
 //  Created by Peter Zimmerman on 7/8/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimerViewController : UIViewController
+@interface RoundsVC : UIViewController
 
 @end

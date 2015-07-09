@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
-#import "RoundsViewController.h"
+#import "RoundsVC.h"
 
-@interface RoundsViewController ()
+@interface RoundsVC ()
 
 @end
 
-@implementation RoundsViewController
+@implementation RoundsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
