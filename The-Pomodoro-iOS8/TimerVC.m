@@ -50,7 +50,6 @@
 }
 
 -(void)updateLabel{
-    self.timeLeft.enabled = NO;
     self.timeLeft.text = [Timer sharedInstance].updateTime;
 }
 
@@ -72,6 +71,7 @@
 //    
 //}
 -(void)startButtonTapped{
+    self.timeLeft.enabled = NO;
     [[Timer sharedInstance] startTimer];
     
 }
