@@ -24,7 +24,7 @@
 }
 -(void)startTimer{
     self.isOn = YES;
-    // [self checkActive];
+    [self checkActive];
 }
 -(void)endTimer{
     self.isOn = NO;
@@ -53,6 +53,7 @@
 
 -(void)cancelTimer{
     self.isOn = NO;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 -(NSString *)updateTime{
