@@ -10,6 +10,9 @@
 
 @interface TimerVC ()
 
+@property (nonatomic, strong) UILabel *timeLeft;
+@property (nonatomic, strong) UIButton *startButton;
+
 @end
 
 @implementation TimerVC
@@ -37,11 +40,11 @@
 
     
     self.timeLeft.text = @"25:00";
-    self.startButton.titleLabel.text = @"Start Timer";
-    self.startButton.backgroundColor = [UIColor blueColor];
+    [self.startButton setTitle:@"Start Timer" forState:UIControlStateNormal];
     
     [self.view addSubview:self.timeLeft];
     [self.view addSubview:self.startButton];
+    [self.startButton addTarget:self action:@selector(startButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {

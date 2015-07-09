@@ -11,9 +11,6 @@
 
 @interface TimerVC : UIViewController
 
-@property (nonatomic, strong) UILabel *timeLeft;
-@property (nonatomic, strong) UIButton *startButton;
-
 -(void)startButtonTapped;
 
 @end
