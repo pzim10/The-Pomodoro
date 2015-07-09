@@ -46,8 +46,10 @@
 }
 
 -(void)checkActive{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     if (self.isOn == YES) {
         [self decreaseSecond];
+        [self performSelector:@selector(checkActive) withObject:nil afterDelay:1.0];
     }
 }
 
