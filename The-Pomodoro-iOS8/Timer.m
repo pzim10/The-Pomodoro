@@ -57,8 +57,8 @@
 }
 
 -(void)cancelTimer{
-    self.isOn = NO;
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    self.isOn = NO;
 }
 
 -(NSString *)updateTime{
