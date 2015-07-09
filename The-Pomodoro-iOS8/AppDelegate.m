@@ -30,6 +30,7 @@
     UITabBarController *tabController = [UITabBarController new];
     tabController.viewControllers = @[timer, navController];
     self.window.rootViewController = tabController;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     return YES;
