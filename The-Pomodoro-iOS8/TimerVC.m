@@ -37,10 +37,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)updateLabel{
+    self.timeLeft.text = [Timer sharedInstance].updateTime;
+}
+-(void)observeNotification: (NSNotificationCenter *)notification{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabel) name:SecondTickNotification object:nil];
+}
+
 //-(id)targetForAction:(SEL)action withSender:(id)sender{
 //    
 //}
 -(void)startButtonTapped{
+    [[Timer sharedInstance] startTimer];
     
 }
 
