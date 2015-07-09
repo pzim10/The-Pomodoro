@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28683BC41B4E143F00348F1C /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BC31B4E143F00348F1C /* TimerVC.m */; };
-		28683BC71B4E144700348F1C /* RoundsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BC61B4E144700348F1C /* RoundsVC.m */; };
+		28683BC71B4E144700348F1C /* Rounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BC61B4E144700348F1C /* Rounds.m */; };
 		28683BCC1B4F144A00348F1C /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BCB1B4F144A00348F1C /* Timer.m */; };
 		28683BCF1B4F2BCA00348F1C /* RoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BCE1B4F2BCA00348F1C /* RoundsViewController.m */; };
 		34FB5C141A95A83100E3E2F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C131A95A83100E3E2F8 /* main.m */; };
@@ -31,8 +31,8 @@
 /* Begin PBXFileReference section */
 		28683BC21B4E143F00348F1C /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
 		28683BC31B4E143F00348F1C /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerVC.m; sourceTree = "<group>"; };
-		28683BC51B4E144700348F1C /* RoundsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsVC.h; sourceTree = "<group>"; };
-		28683BC61B4E144700348F1C /* RoundsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsVC.m; sourceTree = "<group>"; };
+		28683BC51B4E144700348F1C /* Rounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rounds.h; sourceTree = "<group>"; };
+		28683BC61B4E144700348F1C /* Rounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rounds.m; sourceTree = "<group>"; };
 		28683BCA1B4F144A00348F1C /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		28683BCB1B4F144A00348F1C /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		28683BCD1B4F2BCA00348F1C /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsViewController.h; sourceTree = "<group>"; };
@@ -81,10 +81,10 @@
 		28683BC91B4F0CD300348F1C /* Rounds */ = {
 			isa = PBXGroup;
 			children = (
-				28683BC51B4E144700348F1C /* RoundsVC.h */,
+				28683BC51B4E144700348F1C /* Rounds.h */,
 				28683BCD1B4F2BCA00348F1C /* RoundsViewController.h */,
 				28683BCE1B4F2BCA00348F1C /* RoundsViewController.m */,
-				28683BC61B4E144700348F1C /* RoundsVC.m */,
+				28683BC61B4E144700348F1C /* Rounds.m */,
 			);
 			name = Rounds;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				34FB5C171A95A83100E3E2F8 /* AppDelegate.m in Sources */,
 				28683BCF1B4F2BCA00348F1C /* RoundsViewController.m in Sources */,
 				34FB5C141A95A83100E3E2F8 /* main.m in Sources */,
-				28683BC71B4E144700348F1C /* RoundsVC.m in Sources */,
+				28683BC71B4E144700348F1C /* Rounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

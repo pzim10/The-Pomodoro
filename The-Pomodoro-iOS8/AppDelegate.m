@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TimerVC.h"
-#import "RoundsVC.h"
+#import "Rounds.h"
+#import "RoundsViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
     TimerVC *timer = [TimerVC new];
     timer.tabBarItem.title = @"Timer";
     timer.tabBarItem.image = [UIImage imageNamed:@"Timer"];
-    RoundsVC *rounds = [RoundsVC new];
+    RoundsViewController *rounds = [RoundsViewController new];
     rounds.tabBarItem.title = @"Rounds";
     rounds.tabBarItem.image = [UIImage imageNamed:@"Todo List"];
     UINavigationController *navController =[[UINavigationController alloc] initWithRootViewController:rounds];

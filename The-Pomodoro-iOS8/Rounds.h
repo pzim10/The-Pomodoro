@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RoundsVC : UIViewController
+@interface Rounds : NSObject
 
 @property (strong, nonatomic, readonly) NSArray *roundTimes;
 @property (assign, nonatomic) NSInteger currentRound;
-+(RoundsVC *)sharedInstance;
++(Rounds *)sharedInstance;
 
 -(void) roundSelected;
 

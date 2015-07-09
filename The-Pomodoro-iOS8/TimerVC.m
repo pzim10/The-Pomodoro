@@ -38,10 +38,9 @@
     self.startButton= [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2- 50,
                                                                   self.view.frame.size.height - 150, 100, 50)];
 
-    
-    self.timeLeft.text = @"25:00";
     [self.startButton setTitle:@"Start Timer" forState:UIControlStateNormal];
-    
+    [self.startButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.timeLeft setText:@"Initial Text"];
     [self.view addSubview:self.timeLeft];
     [self.view addSubview:self.startButton];
     [self.startButton addTarget:self action:@selector(startButtonTapped) forControlEvents:UIControlEventTouchUpInside];

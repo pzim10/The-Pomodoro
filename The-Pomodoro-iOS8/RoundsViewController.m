@@ -7,7 +7,7 @@
 //
 
 #import "RoundsViewController.h"
-#import "RoundsVC.h"
+#import "Rounds.h"
 #import "Timer.h"
 
 static NSString *reuseID = @"reuseID";
@@ -63,8 +63,8 @@ static NSString *reuseID = @"reuseID";
 //Cancel the timer
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [RoundsVC sharedInstance].currentRound = indexPath.row;
-    [[RoundsVC sharedInstance] roundSelected];
+    [Rounds sharedInstance].currentRound = indexPath.row;
+    [[Rounds sharedInstance] roundSelected];
     [[Timer sharedInstance] cancelTimer];
 }
 
@@ -74,7 +74,7 @@ static NSString *reuseID = @"reuseID";
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
     
-    NSArray *roundsArray = [RoundsVC sharedInstance].roundTimes;
+    NSArray *roundsArray = [Rounds sharedInstance].roundTimes;
     NSNumber *minutes = roundsArray[indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%li minutes", (long)[minutes integerValue]];
@@ -84,7 +84,7 @@ static NSString *reuseID = @"reuseID";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [RoundsVC sharedInstance].roundTimes.count;
+    return [Rounds sharedInstance].roundTimes.count;
 }
 
 #pragma mark - Notification Methods
@@ -100,17 +100,17 @@ static NSString *reuseID = @"reuseID";
 //Otherwise set currentRound to 0
 - (void)roundComplete
 {
-    if ([RoundsVC sharedInstance].currentRound < [RoundsVC sharedInstance].roundTimes.count - 1)
+    if ([Rounds sharedInstance].currentRound < [Rounds sharedInstance].roundTimes.count - 1)
     {
-        [RoundsVC sharedInstance].currentRound++;
-        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsVC sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
-        [[RoundsVC sharedInstance] roundSelected];
+        [Rounds sharedInstance].currentRound++;
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[Rounds sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [[Rounds sharedInstance] roundSelected];
     }
     else
     {
-        [RoundsVC sharedInstance].currentRound = 0;
-        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsVC sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
-        [[RoundsVC sharedInstance] roundSelected];
+        [Rounds sharedInstance].currentRound = 0;
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[Rounds sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [[Rounds sharedInstance] roundSelected];
     }
 }
 

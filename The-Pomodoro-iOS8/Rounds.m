@@ -6,20 +6,20 @@
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
-#import "RoundsVC.h"
+#import "Rounds.h"
 #import "Timer.h"
 
-@interface RoundsVC ()
+@interface Rounds ()
 
 @end
 
-@implementation RoundsVC
+@implementation Rounds
 
-+ (RoundsVC *)sharedInstance {
-    static RoundsVC *sharedInstance = nil;
++ (Rounds *)sharedInstance {
+    static Rounds *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [RoundsVC new];
+        sharedInstance = [Rounds new];
         
         
     });
@@ -31,17 +31,6 @@
     [Timer sharedInstance].seconds = 0;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NewRoundNotification object:nil];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-        self.view.backgroundColor = [UIColor redColor];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(NSArray *)roundTimes{
