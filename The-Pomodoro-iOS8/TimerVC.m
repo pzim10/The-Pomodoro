@@ -56,6 +56,7 @@
 
 -(void)newRound{
     self.timeLeft.enabled = YES;
+    [self updateLabel];
 }
 
 -(void)registerForNotifications{
