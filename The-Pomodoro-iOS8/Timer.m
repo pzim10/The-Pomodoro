@@ -31,13 +31,16 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:TimerCompleteNotification object:nil];
 }
 -(void)decreaseSecond{
-    self.seconds--;
-    [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil];
-    if (self.seconds < 0 && self.minutes > 0) {
+    if (self.seconds > 0) {
+        self.seconds--;
+        [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil];
+    }
+    else if (self.seconds == 0 && self.minutes > 0) {
         self.seconds = 59;
         self.minutes--;
+        [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil];
     }
-    else if (self.seconds == 0 && self.minutes == 0){
+    else{
         [self endTimer];
     }
 }
