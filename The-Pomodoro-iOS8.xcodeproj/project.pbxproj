@@ -10,6 +10,7 @@
 		28683BC41B4E143F00348F1C /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BC31B4E143F00348F1C /* TimerVC.m */; };
 		28683BC71B4E144700348F1C /* RoundsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BC61B4E144700348F1C /* RoundsVC.m */; };
 		28683BCC1B4F144A00348F1C /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BCB1B4F144A00348F1C /* Timer.m */; };
+		28683BCF1B4F2BCA00348F1C /* RoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28683BCE1B4F2BCA00348F1C /* RoundsViewController.m */; };
 		34FB5C141A95A83100E3E2F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C131A95A83100E3E2F8 /* main.m */; };
 		34FB5C171A95A83100E3E2F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C161A95A83100E3E2F8 /* AppDelegate.m */; };
 		34FB5C1F1A95A83100E3E2F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34FB5C1E1A95A83100E3E2F8 /* Images.xcassets */; };
@@ -34,6 +35,8 @@
 		28683BC61B4E144700348F1C /* RoundsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsVC.m; sourceTree = "<group>"; };
 		28683BCA1B4F144A00348F1C /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		28683BCB1B4F144A00348F1C /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		28683BCD1B4F2BCA00348F1C /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsViewController.h; sourceTree = "<group>"; };
+		28683BCE1B4F2BCA00348F1C /* RoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsViewController.m; sourceTree = "<group>"; };
 		34FB5C0E1A95A83100E3E2F8 /* The-Pomodoro-iOS8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Pomodoro-iOS8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FB5C121A95A83100E3E2F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34FB5C131A95A83100E3E2F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				28683BC51B4E144700348F1C /* RoundsVC.h */,
+				28683BCD1B4F2BCA00348F1C /* RoundsViewController.h */,
+				28683BCE1B4F2BCA00348F1C /* RoundsViewController.m */,
 				28683BC61B4E144700348F1C /* RoundsVC.m */,
 			);
 			name = Rounds;
@@ -244,6 +249,7 @@
 				28683BCC1B4F144A00348F1C /* Timer.m in Sources */,
 				28683BC41B4E143F00348F1C /* TimerVC.m in Sources */,
 				34FB5C171A95A83100E3E2F8 /* AppDelegate.m in Sources */,
+				28683BCF1B4F2BCA00348F1C /* RoundsViewController.m in Sources */,
 				34FB5C141A95A83100E3E2F8 /* main.m in Sources */,
 				28683BC71B4E144700348F1C /* RoundsVC.m in Sources */,
 			);
