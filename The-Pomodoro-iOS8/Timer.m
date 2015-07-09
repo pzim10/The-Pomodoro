@@ -59,6 +59,26 @@
 }
 
 -(NSString *)updateTime{
-//    return (@"%lu : %@", self.minutes, self.seconds);
+    NSString *timerString;
+    
+    if (self.minutes >= 10)
+    {
+        timerString = [NSString stringWithFormat:@"%li:", (long)self.minutes];
+    }
+    else
+    {
+        timerString = [NSString stringWithFormat:@"0%li:", (long)self.minutes];
+    }
+    
+    if (self.seconds >= 10)
+    {
+        timerString = [timerString stringByAppendingString:[NSString stringWithFormat:@"%li", (long)self.seconds]];
+    }
+    else
+    {
+        timerString = [timerString stringByAppendingString:[NSString stringWithFormat:@"0%li", (long)self.seconds]];
+    }
+    
+    return timerString;
 }
 @end
