@@ -82,9 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				28683BC51B4E144700348F1C /* Rounds.h */,
+				28683BC61B4E144700348F1C /* Rounds.m */,
 				28683BCD1B4F2BCA00348F1C /* RoundsViewController.h */,
 				28683BCE1B4F2BCA00348F1C /* RoundsViewController.m */,
-				28683BC61B4E144700348F1C /* Rounds.m */,
 			);
 			name = Rounds;
 			sourceTree = "<group>";
