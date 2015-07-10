@@ -41,6 +41,7 @@ static NSString *reuseID = @"reuseID";
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.navigationItem.title = @"Rounds";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseID];
     [self.view addSubview:self.tableView];
 }
@@ -78,7 +79,29 @@ static NSString *reuseID = @"reuseID";
     NSNumber *minutes = roundsArray[indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%li minutes", (long)[minutes integerValue]];
+    NSString *imageName;
+    if (indexPath.row == 0 || indexPath.row == 2 ||
+        indexPath.row == 4 || indexPath.row == 6) {
+        imageName = @"work.jpg";
+    } else if (indexPath.row ==7) {
+        imageName = @"nap.jpg";
+    }
+    else {
+        imageName = @"play.jpg";
+    }
+    [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
     
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", imageName]]];
+    UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", imageName]]];
+
+    imageView.frame = CGRectMake(5, 5, 25, 25);
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    imageView2.frame = CGRectMake(cell.frame.size.width +25, 5, 25, 25);
+    imageView2.contentMode = UIViewContentModeScaleAspectFit;
+
+    [cell addSubview:imageView];
+    [cell addSubview:imageView2];
     return cell;
 }
 

@@ -25,7 +25,6 @@
     [[UIButton appearance] setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
     [[UITableView appearance] setBackgroundColor:[UIColor lightGrayColor]];
     [[UITableViewCell appearance] setBackgroundColor:[UIColor redColor]];
-//    [[UITableViewCell appearance] setTextColor:[UIColor greenColor]];
     [[UILabel appearance] setTextColor:[UIColor cyanColor]];
 }
 
