@@ -10,6 +10,7 @@
 #import "TimerVC.h"
 #import "Rounds.h"
 #import "RoundsViewController.h"
+#import "AppearancController.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +34,8 @@
     self.window.rootViewController = tabController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [AppearancController initializeNewAppearance];
     
     return YES;
 }

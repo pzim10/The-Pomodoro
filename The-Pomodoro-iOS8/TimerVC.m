@@ -34,9 +34,9 @@
     // Do any additional setup after loading the view.
 //    self.view.backgroundColor = [UIColor whiteColor];
     self.timeLeft = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/ 2 - 100,
-                                                              self.view.frame.size.height/ 2 - 25, 200, 50)];
+                                                              self.view.frame.size.height/ 2 - 100, 200, 100)];
     self.startButton= [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2- 50,
-                                                                  self.view.frame.size.height - 150, 100, 50)];
+                                                                  self.view.frame.size.height - 250, 100, 50)];
 
     [self.startButton setTitle:@"Start Timer" forState:UIControlStateNormal];
     [self.startButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
