@@ -19,12 +19,17 @@
 
 +(void)initializeNewAppearance{
     [[UIView appearanceWhenContainedIn:[TimerVC class], nil] setBackgroundColor:[UIColor darkGrayColor]];
+    
     [[UINavigationBar appearance] setBarTintColor: [UIColor blueColor]];
+    
     [[UITabBar appearance] setBarTintColor:[UIColor orangeColor]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor greenColor]} forState:UIControlStateNormal];
+    
     [[UIButton appearance] setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+
     [[UITableView appearance] setBackgroundColor:[UIColor lightGrayColor]];
     [[UITableViewCell appearance] setBackgroundColor:[UIColor redColor]];
+    
     [[UILabel appearance] setTextColor:[UIColor cyanColor]];
 }
 
