@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 static NSString *SecondTickNotification = @"Second Tick";
 static NSString *TimerCompleteNotification = @"Timer Complete";
@@ -21,5 +21,7 @@ static NSString *NewRoundNotification = @"New Round";
 -(void)startTimer;
 -(void)cancelTimer;
 -(NSString *) updateTime;
+-(void)prepareForBackground;
+-(void)loadFromBackground;
 
 @end

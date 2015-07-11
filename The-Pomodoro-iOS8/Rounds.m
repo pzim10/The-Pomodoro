@@ -32,7 +32,7 @@
 }
 
 -(NSArray *)roundTimes{
-    return @[ @25, @5, @25, @5, @25, @5, @25, @15 ];
+    return @[ @1, @5, @25, @5, @25, @1, @1, @1 ];
 }
 /*
 #pragma mark - Navigation

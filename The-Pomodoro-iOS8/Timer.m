@@ -7,9 +7,14 @@
 //
 
 #import "Timer.h"
+#import "TimerVC.h"
+
+static NSString * const TimerExpirationDateKey = @"Timer Expiration Date";
+
 @interface Timer ()
 
 @property (nonatomic, assign) BOOL isOn;
+@property (nonatomic, strong) NSDate *expirationDate;
 
 @end
 @implementation Timer
@@ -25,6 +30,18 @@
 
 -(void)startTimer{
     self.isOn = YES;
+    self.expirationDate = [NSDate dateWithTimeInterval:self.minutes *60 sinceDate:[NSDate date]];
+    
+    UILocalNotification *localNotification = [UILocalNotification new];
+    if (localNotification) {
+        localNotification.fireDate = self.expirationDate;
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        localNotification.repeatInterval = 0;
+        localNotification.soundName = @"bell_tree.mp3";
+        localNotification.alertBody = @"Timer Expired";
+        localNotification.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication]scheduleLocalNotification:localNotification];
+    }
     [self checkActive];
 }
 
@@ -58,6 +75,7 @@
 
 -(void)cancelTimer{
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     self.isOn = NO;
 }
 
@@ -83,5 +101,18 @@
     }
     
     return timerString;
+}
+-(void)prepareForBackground {
+
+    [[NSUserDefaults standardUserDefaults]setObject:self.expirationDate forKey:TimerExpirationDateKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+}
+
+-(void)loadFromBackground{
+    self.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:TimerExpirationDateKey];
+    int timeInterval = [self.expirationDate timeIntervalSinceNow];
+    self.minutes = timeInterval / 60;
+    self.seconds = timeInterval % 60;
 }
 @end
